@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Movies</h1>
+    <table>
+      {% for movie in data['movies'] %} 
+        {%if movie['title']!="Terminator" %}
+      <tr>
+        <!-- In the email the table formatting looks weird because no styling and big difference in num of characters between columns -->
+        <td>{{ movie['title'] }}</td>
+        <td>{{ movie['description'] }}</td>
+      </tr>
+        {% endif %} 
+      
+      {% endfor %}
+    </table>
+{% endblock %}
